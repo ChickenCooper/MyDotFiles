@@ -4,7 +4,7 @@ set $exe --no-startup-id exec
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Monospace 10
+font pango: roboto 10 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -22,7 +22,7 @@ $super+Shift+z	gaps outer current minus 5
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-$super+Return exec $exe urxvt
+$super+Return exec $exe xst
 
 # kill focused window
 $super+q kill
@@ -122,9 +122,10 @@ $super+Shift+9 move container to workspace $ws9
 $super+Shift+0 move container to workspace $ws10
 
 
-workspace $ws1 output "HDMI-0"
-workspace $ws9 output "DP-0"
-workspace $ws10 output "DP-0"
+workspace $ws10 output "HDMI-0"
+workspace $ws9 output "HDMI-0"
+workspace $ws1 output "DP-0"
+workspace $ws2 output "DP-0"
 
 # reload the configuration file
 $super+Shift+c reload
@@ -179,12 +180,13 @@ hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3blocks -c /home/alex/i3blocks.conf
+        status_command i3blocks -c  ~/.config/i3blocks/i3blocks.conf
         position top
 	colors {
 		background $bg-color
-	    separator #757575
+	        separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -192,10 +194,8 @@ bar {
 }        
 
 }
+
+exec_always $exe flashfocus
 exec $exe compton
 exec_always $exe feh --bg-scale /home/alex/Images/wallpaper.jpg
-exec $exe xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 1920x0 \
- --rotate normal --output DP-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
-
-# MPD daemon start (if no other user instance exists)
 exec $exe mpd
