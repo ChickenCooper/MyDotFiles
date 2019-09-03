@@ -9,8 +9,12 @@ URxvt.scrollstyle: rxvt
 URxvt.termName: xterm-256color
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: False
-urxvt.transparent: False 
-urxvt.shading: 30
+urxvt.transparent: False
+!urxvt.shading: 30
+!URxvt.background: #1A6785
+!URxvt.foreground: 
+URxvt.internalBorder: 10
+URxvt.borderColor: #1A6785
 
 
 ! Extensions
@@ -39,8 +43,9 @@ URxvt.keysym.M-u: perl:url-select:select_next
 !URxvt.font: xft:Courier-10
 
 !Inconsolata
-URxvt.font: xft:Inconsolata-12
-URxvt.boldFont: xft:Inconsolata-12
+URxvt.font: xft:Inconsolata-15, \
+			xft:Symbola-15
+URxvt.boldFont: xft:Inconsolata-15
 URxvt.letterSpace: -1
 
 !Inconsolata-g
@@ -70,34 +75,43 @@ URxvt.letterSpace: -1
 !Terminus
 !URxvt.font: xft:Terminus-10
 
-! Tango theme
+!XST
 
-URxvt.background: #06090f
-URxvt.foreground: #EDEDED
+st.font: Liberation Mono:pixelsize=18:antialias=true:autohint=true;
+
+! special
+*.foreground:   #ededed
+*.background:   #1a6785
+*.cursorColor:  #ededed
 
 ! black
-URxvt.color0  : #2E3436
-URxvt.color8  : #555753
+*.color0:       #2e3436
+*.color8:       #555753
+
 ! red
-URxvt.color1  : #CC0000
-URxvt.color9  : #EF2929
+*.color1:       #b1340a
+*.color9:       #8b0d32
+
 ! green
-URxvt.color2  : #4E9A06
-URxvt.color10 : #8AE234
+*.color2:       #c4a000
+*.color10:      #e29734
+
 ! yellow
-URxvt.color3  : #C4A000
-URxvt.color11 : #FCE94F
+*.color3:       #df6a7c
+*.color11:      #fce94f
+
 ! blue
-URxvt.color4  : #3465A4
-URxvt.color12 : #729FCF
+*.color4:       #173b6a
+*.color12:      #142d47
+
 ! magenta
-URxvt.color5  : #75507B
-URxvt.color13 : #AD7FA8
+*.color5:       #a96480
+*.color13:      #722e6b
+
 ! cyan
-URxvt.color6  : #06989A
-URxvt.color14 : #34E2E2
+*.color6:       #06989a
+*.color14:      #34e2e2
+
 ! white
-URxvt.color7  : #D3D7CF
-URxvt.color15 : #EEEEEC
-
-
+*.color7:       #d3d7cf
+*.color15:      #eeeeec
